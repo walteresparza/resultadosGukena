@@ -54,7 +54,6 @@ function actualizarGrafico(data){
                         borderColor: arregloTotal[1],
                         borderWidth: arregloTotal[2],
                         data: data.total,
-                        xAxisID:'id',
                       }]
            },
     options:{
@@ -66,6 +65,9 @@ function actualizarGrafico(data){
                         display: true,
                         text: data.titulo,
                         },
+                        scales:{
+                        	xAxes:[{ticks:{beginAtZero:true}}]
+                        }
                 
             },
 
@@ -94,7 +96,7 @@ function arregloDeColore(){
 $(".dropdown-menu").on('click', 'li a', function(){
   var selText = $(this).children("h7").html();
  $(this).parent('li').siblings().removeClass('active');
-  $(this).parents('.btn-group').find('.selection').html(selText);
+  $(this).parents('.nav-item').find('.selection').html(selText);
   $(this).parents('li').addClass("active");
 });
 function actualizarTitulo(data){
@@ -108,13 +110,6 @@ function cambioGrafico(){
     } else{
         tipo = 'horizontalBar';}
 }
-$(window).resize(function(){
-   var aux = $(this);
-   if (aux.width() < 820) {
-    (document.getElementById("primeraImagen")).src="img/icono.ico";
-   }else{(document.getElementById("primeraImagen")).src="img/marca UNCo azul.ico";};
-})
-
 function exportarTabla(){
     $("#tabla").table2excel({
         name:titulo,
