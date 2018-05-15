@@ -23,14 +23,6 @@ body {
 #inicio{
   background-color: #00658a;
 }
-#titUno,#titDos,#titTres{
-  border-bottom-right-radius: 0rem;
-  border-top-right-radius: 0rem;
-}
-#uno,#dos,#tres{
-  border-bottom-left-radius: 0rem;
-  border-top-left-radius: 0rem;
-}
 #carteles{
   background-color: #fff;
 }
@@ -46,6 +38,8 @@ body {
 }
 #refresh{
   position: fixed;
+      bottom: 0;
+    right: 0;
   z-index: 1;
 }
 }

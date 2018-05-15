@@ -24,7 +24,7 @@ function cambioTablaGrafico(opcion, valor){
 }
 function llamadaAjax(){
 $.ajax({
-        url: 'e20150616/'+json,
+        url: 'e20180522/'+json,
         dataType: 'json',
         cache: false,
         success: function(data) {
@@ -43,23 +43,23 @@ function actualizarTabla(data)
 
 }
 function actualizarGrafico(data){
-   var arregloTotal = carga(data);
+  // var arregloTotal = carga(data);
    if (grafico != null) {grafico.destroy();};
    grafico = new Chart(document.getElementById("grafico"), {
     type: tipo,//'pie',horizontalBar
     data: {
             labels: data.labels,
              datasets: [{
-                        backgroundColor: arregloTotal[0],
-                        borderColor: arregloTotal[1],
-                        borderWidth: arregloTotal[2],
+                        backgroundColor: "#3498db",// arregloTotal[0],
+                        borderColor: "#1a5276",//arregloTotal[1],
+                        borderWidth: 2,//arregloTotal[2],
                         data: data.total,
                       }]
            },
     options:{
              legend:{
-                    display: arregloTotal[3],
-                    position: arregloTotal[4],
+                    display: false,//arregloTotal[3],
+                    position: "top",//arregloTotal[4],
                 },
                 title: {
                         display: true,
