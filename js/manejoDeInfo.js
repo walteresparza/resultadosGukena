@@ -68,9 +68,7 @@ function actualizarGrafico(data){
                         scales:{
                         	xAxes:[{ticks:{beginAtZero:true}}]
                         }
-                
             },
-
     });
 }
 function carga(data){
