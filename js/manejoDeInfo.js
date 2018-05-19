@@ -29,6 +29,8 @@ $.ajax({
         dataType: 'json',
         cache: false,
         success: function(data) {
+        	$('#alerta').hide();
+        	
         						actualizarTitulo(data);
                                 actualizarTabla(data);
                                 actualizarGrafico(data);
@@ -46,6 +48,8 @@ function borrar(){
     document.getElementById('enviadoConfirmado').innerHTML ="";
     $('#contGrafico').hide();
     $('#contTabla').hide();
+    $('#carteles').hide();
+    $('#alerta').show();
     document.getElementById('hora').innerHTML = "";
     titulo=data.titulo;
 
@@ -124,6 +128,7 @@ $(".dropdown-menu").on('click', 'li a', function(){
   $(this).parents('li').addClass("active");
 });
 function actualizarTitulo(data){
+	$('#carteles').show();
 document.getElementById('titulo').innerHTML = data.titulo;
 document.getElementById('enviadoConfirmado').innerHTML =data.enviadas+'</br>'+data.confirmadas;
 document.getElementById('hora').innerHTML = data.fecha;
