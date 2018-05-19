@@ -4,7 +4,6 @@ var categoria = 'R';
 var grafico = null;
 var tipo = 'pie';
 var titulo;
-var carpetajson;
 
 $(function () {
     json = categoria +"_"+ ua +"_"+ claustro + '.json';
@@ -26,7 +25,7 @@ function cambioTablaGrafico(opcion, valor){
 }
 function llamadaAjax(){
 $.ajax({
-        url: carpetajson+json,
+        url: carpetajson+'/'+json,
         dataType: 'json',
         cache: false,
         success: function(data) {
