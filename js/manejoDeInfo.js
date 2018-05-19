@@ -89,7 +89,7 @@ function actualizarGrafico(data){
                 },
                 title: {
                         display: true,
-                        text: data.titulo,
+                        
                         },
                         scales:{
                         	xAxes:[{ticks:{beginAtZero:true}}]
@@ -127,6 +127,7 @@ function actualizarTitulo(data){
 document.getElementById('titulo').innerHTML = data.titulo;
 document.getElementById('enviadoConfirmado').innerHTML =data.enviadas+'</br>'+data.confirmadas;
 document.getElementById('hora').innerHTML = data.fecha;
+document.getElementById('tituloTabla').innerHTML=data.titulo;
 titulo=data.titulo;
 }
 function cambioGrafico(){
@@ -140,7 +141,4 @@ function exportarTabla(){
         name:titulo,
         filename: titulo
   });
-}
-function cambiar(carpeta) {
-    carpetajson=carpeta;
 }
