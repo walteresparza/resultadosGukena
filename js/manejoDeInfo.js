@@ -44,19 +44,27 @@ function borrar(){
     document.getElementById('titulo').innerHTML = "No hay datos para el filtro ingresado";
     document.getElementById('titulo2').innerHTML = "";
     document.getElementById('enviadoConfirmado').innerHTML ="";
-    //document.getElementById('contGrafico').class="d-none";
     $('#contGrafico').hide();
+    $('#contTabla').hide();
     document.getElementById('hora').innerHTML = "";
     titulo=data.titulo;
 
 }
 function actualizarTabla(data)
 {
+	$('#contTabla').show();
     $('#tabla').bootstrapTable('destroy');
     $('#tabla').bootstrapTable({
                                     data: data.data,
                                     columns: data.columns
                                 });
+    if(data.hasOwnProperty('data2')){
+        document.getElementById('titulo2').innerHTML = 'Dont';
+    $('#tabla2').bootstrapTable({
+                                    data: data.data2,
+                                    columns: data.columns2
+                                });
+                            }
 
 }
 function actualizarGrafico(data){
