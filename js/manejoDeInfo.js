@@ -130,8 +130,8 @@ $(".dropdown-menu").on('click', 'li a', function(){
 function actualizarTitulo(data){
 	$('#carteles').show();
 document.getElementById('titulo').innerHTML = data.titulo;
-document.getElementById('enviadoConfirmado').innerHTML =data.enviadas+'</br>'+data.confirmadas;
-document.getElementById('hora').innerHTML = data.fecha;
+document.getElementById('enviadoConfirmado').innerHTML ="Mesas Cargadas: "+data.enviadas+'</br>'+"Mesas Confirmadas: "+data.confirmadas;
+document.getElementById('hora').innerHTML ="Actualizado a: "+data.fecha;
 document.getElementById('tituloTabla').innerHTML=data.titulo;
 titulo=data.titulo;
 }
