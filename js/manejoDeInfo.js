@@ -32,7 +32,23 @@ $.ajax({
         						actualizarTitulo(data);
                                 actualizarTabla(data);
                                 actualizarGrafico(data);
-                                }}); 
+                                },
+                                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                                    borrar();
+                                    }}); 
+}
+function borrar(){
+    if (grafico != null) {grafico.destroy();};
+    $('#tabla').bootstrapTable('destroy');
+    $('#tabla2').bootstrapTable('destroy');
+    document.getElementById('titulo').innerHTML = "No hay datos para el filtro ingresado";
+    document.getElementById('titulo2').innerHTML = "";
+    document.getElementById('enviadoConfirmado').innerHTML ="";
+    //document.getElementById('contGrafico').class="d-none";
+    $('#contGrafico').hide();
+    document.getElementById('hora').innerHTML = "";
+    titulo=data.titulo;
+
 }
 function actualizarTabla(data)
 {
@@ -45,6 +61,7 @@ function actualizarTabla(data)
 }
 function actualizarGrafico(data){
   // var arregloTotal = carga(data);
+	$('#contGrafico').show();
    if (grafico != null) {grafico.destroy();};
    grafico = new Chart(document.getElementById("grafico"), {
     type: 'horizontalBar',//'pie','horizontalBar',tipo
