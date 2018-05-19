@@ -63,7 +63,7 @@ function actualizarTabla(data)
                                     columns: data.columns
                                 });
     if(data.hasOwnProperty('data2')){
-        document.getElementById('titulo2').innerHTML = 'Dont';
+        document.getElementById('titulo2').innerHTML = data.titulo2;
     $('#tabla2').bootstrapTable({
                                     data: data.data2,
                                     columns: data.columns2
