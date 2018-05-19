@@ -1,5 +1,4 @@
 body{
-  background-color: #ccc;
   background-image: linear-gradient(transparent 50%, rgba(255,255,255,.5) 25%);
   background-size: 4px 4px;
 }

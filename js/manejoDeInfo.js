@@ -28,9 +28,9 @@ $.ajax({
         dataType: 'json',
         cache: false,
         success: function(data) {
+        						actualizarTitulo(data);
                                 actualizarTabla(data);
                                 actualizarGrafico(data);
-                                actualizarTitulo(data);
                                 }}); 
 }
 function actualizarTabla(data)
@@ -46,7 +46,7 @@ function actualizarGrafico(data){
   // var arregloTotal = carga(data);
    if (grafico != null) {grafico.destroy();};
    grafico = new Chart(document.getElementById("grafico"), {
-    type: tipo,//'pie',horizontalBar
+    type: 'horizontalBar',//'pie','horizontalBar',tipo
     data: {
             labels: data.labels,
              datasets: [{
@@ -99,6 +99,7 @@ $(".dropdown-menu").on('click', 'li a', function(){
 });
 function actualizarTitulo(data){
 document.getElementById('titulo').innerHTML = data.titulo;
+document.getElementById('enviadoConfirmado').innerHTML =data.enviadas+'</br>'+data.confirmadas;
 document.getElementById('hora').innerHTML = data.fecha;
 titulo=data.titulo;
 }
