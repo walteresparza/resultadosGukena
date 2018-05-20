@@ -30,7 +30,7 @@ $.ajax({
         cache: false,
         success: function(data) {
         	$('#alerta').hide();
-        	
+        	$('#fin').removeClass('fixed-bottom');
         						actualizarTitulo(data);
                                 actualizarTabla(data);
                                 actualizarGrafico(data);
@@ -43,14 +43,11 @@ function borrar(){
     if (grafico != null) {grafico.destroy();};
     $('#tabla').bootstrapTable('destroy');
     $('#tabla2').bootstrapTable('destroy');
-    document.getElementById('titulo').innerHTML = "No hay datos para el filtro ingresado";
-    document.getElementById('titulo2').innerHTML = "";
-    document.getElementById('enviadoConfirmado').innerHTML ="";
     $('#contGrafico').hide();
     $('#contTabla').hide();
     $('#carteles').hide();
     $('#alerta').show();
-    document.getElementById('hora').innerHTML = "";
+    $('#fin').addClass('fixed-bottom');
     titulo=data.titulo;
 
 }
@@ -64,6 +61,7 @@ function actualizarTabla(data)
                                 });
     if(data.hasOwnProperty('data2')){
         document.getElementById('titulo2').innerHTML = data.titulo2;
+    $('#tabla2').bootstrapTable('destroy');
     $('#tabla2').bootstrapTable({
                                     data: data.data2,
                                     columns: data.columns2
