@@ -10,6 +10,7 @@
 }
 #carteles{
   background-color: #fff;
+  diplay:none;
 }
 #borde{
   border-right: 0 !important;

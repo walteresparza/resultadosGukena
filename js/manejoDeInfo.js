@@ -60,6 +60,8 @@ function actualizarTabla(data) {
 		data : data.data,
 		columns : data.columns
 	});
+    $('#tabla2').bootstrapTable('destroy');
+    document.getElementById('titulo2').innerHTML = '';
 	if (data.hasOwnProperty('data2')) {
 		document.getElementById('titulo2').innerHTML = data.titulo2;
 		$('#tabla2').bootstrapTable('destroy');
