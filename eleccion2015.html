@@ -152,21 +152,24 @@
 			</div>
 		</div>
 	</div>
-	<div class="container-fluid">
+	<div class="d-print-none container-fluid">
 		<div class="row flex-row-reverse">
 			<div class="col-3 col-md-1">
-				<button id="refresh" class="btn btn-primary" onclick="llamadaAjax()">
-					<span data-feather="refresh-cw"></span>
+				<button id="contRefresh" class="btn btn-primary" onclick="llamadaAjax()">
+					<span id="refresh"data-feather="refresh-cw"></span>
+					<span id="loader" >Cargando...</span>
 				</button>
 			</div>
 		</div>
 	</div>
-	<div class="container" id="contGrafico">
+	<div class="d-print-none container" id="contGrafico">
 		<div class="row d-flex p-4 justify-content-center">
 			<div
 				class="shadow-lg p-4 mb-4 bg-white col-12 col-sm-10 col-md-9 col-lg-8 col-xl-7"
 				id="lugarGrafico">
 				<canvas id="grafico"></canvas>
+				<button type="button" class="btn btn-outline-primary float-right"id="mostrarCartel">
+  Mostrar Detalles</button>
 			</div>
 		</div>
 	</div>
@@ -187,7 +190,7 @@
 		</div>
 	</div>
 	<div id="pie"
-		class="row bg-dark d-flex justify-content-left">
+		class="row bg-dark d-flex justify-content-left d-print-none">
 		<!--<footer class="d-flex justify-content-between bg-dark mb-3">-->
 		<div>
 			<a href="http://euclides.uncoma.edu.ar/?q=node/12"><img
