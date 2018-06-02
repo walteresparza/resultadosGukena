@@ -76,7 +76,16 @@ function actualizarGrafico(data) {
 	if (grafico != null) {
 		grafico.destroy();
 	}
-	;
+	if(data.hasOwnProperty('titulo_grafico'))
+		{
+		tituloGrafico = data.titulo_grafico;
+		mostrarGrafico = true;
+		}
+	else
+		{
+		tituloGrafico="";
+		mostrarGrafico = false;
+		}
 	grafico = new Chart(document.getElementById("grafico"), {
 		type : 'horizontalBar',// 'pie','horizontalBar',tipo
 		data : {
@@ -96,8 +105,8 @@ function actualizarGrafico(data) {
 				position : "top",// arregloTotal[4],
 			},
 			title : {
-				display : true,
-
+				display :mostrarGrafico,
+				text: tituloGrafico
 			},
 			scales : {
 				xAxes : [ {
@@ -111,8 +120,7 @@ function actualizarGrafico(data) {
 		        	enabled: true,
 	                mode: 'single',
 		          label: function(tooltipItems, data) {
-		        	  console.log(tooltipItems);
-		            return tooltipItems.xLabel+ " %";
+		            return "";
 		          }
 		        }
 		      }
@@ -121,7 +129,7 @@ function actualizarGrafico(data) {
 }
 /*
  * para mostrar carteles
- */ 
+ 
 Chart.pluginService.register({
 	  beforeRender: function(chart) {
 	    if (chart.config.options.showAllTooltips) {
@@ -165,7 +173,7 @@ Chart.pluginService.register({
 	      chart.options.tooltips.enabled = false;
 	    }
 	  }
-	});
+	});*/ 
  
 /*
  * en el caso de la torta function carga(data){ var i, salida=[], color=[],
