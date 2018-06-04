@@ -39,3 +39,10 @@
 #alerta{
 	display:none;
 }
+.navbar
+{
+	flex-wrap: nowrap;
+}
+#contTabla{
+    max-width: 1240px;
+}

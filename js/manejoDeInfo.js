@@ -34,7 +34,7 @@ function llamadaAjax() {
 		},
 		success : function(data) {
 			$('#alerta').hide();
-			
+			$('#contRefresh').show();
 			actualizarTitulo(data);
 			actualizarTabla(data);
 			actualizarGrafico(data);
@@ -49,7 +49,7 @@ function borrar() {
 	$('#contTabla').hide();
 	$('#carteles').hide();
 	$('#alerta').show();
-	
+	$('#contRefresh').hide();
 }
 function actualizarTabla(data) {
 	$('#contTabla').show();
